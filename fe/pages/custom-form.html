@@ -1,0 +1,42 @@
+<div ng-controller="createController" class="container">
+    <div class="row filter-section">
+        <div class="col-md-12">
+            <input type="text" class="form-control" placeholder="Search" ng-model='searchData' name="employeeName">
+        </div>
+    </div>
+    <h1 class="todoList">Employee List</h1>
+    <table class="table todoTable">
+        <thead>
+            <tr>
+                <th scope="col">Name</th>
+                <th scope="col">Email</th>
+                <th scope="col">Sex</th>
+                <th scope="col">Edit</th>
+                <th scope="col">Update</th>
+                <th scope="col">Delete</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="(key, employee) in employees | filter : searchData">
+                <td>
+                    <input type="text" class="todoText" ng-model='employee.name' ng-disabled='employee.isDisabled'/>
+                </td>
+                <td>
+                    <input type="text" class="todoText" ng-model='employee.email' ng-disabled='employee.isDisabled'/>
+                </td>
+                <td>
+                    <input type="text" class="todoText" ng-model='employee.sex' ng-disabled='employee.isDisabled'/>
+                </td>
+                <td class="edit">
+                    <button class="btn btn-primary" ng-click='editTodo(key)' ng-disabled="employee.isEdit">edit</button>
+                </td>
+                <td class="edit">
+                    <button class="btn btn-primary" ng-click='updateTodo(key, employee)' ng-disabled="employee.isUpdate">update</button>
+                </td>
+                <td class="delete" >
+                    <button class="btn btn-danger" ng-click='deleteTodo(key, employee)'>delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

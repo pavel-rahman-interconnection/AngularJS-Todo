@@ -1,0 +1,31 @@
+<div class="container" ng-controller="createController">
+  <h1 class="h1">
+    Add Employee
+  </h1>
+  <form name="employeeForm">
+      <div class="row">
+        <div class="col-md-12">
+            <div class="form-group">
+              <label for="exampleInputEmail1">Name</label>
+              <input type="text" class="form-control" placeholder="Enter your Name" ng-model='name' name="employeeName" required>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Email</label>
+            <input type="email" name='email' class="form-control" placeholder="Enter your Email" ng-model='email' required>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="form-group">
+            <label for="exampleInputPassword1">Gender</label>
+            <input type="text" class="form-control" placeholder="Enter your Sex eg. m or f" ng-model='sex' maxlength="1" name="sex" required>
+          </div>
+        </div>
+      </div>
+
+      <button class="btn btn-primary add-button" type="button" ng-click='addTodo()'>Add Employee</button>
+    </form>
+</div>

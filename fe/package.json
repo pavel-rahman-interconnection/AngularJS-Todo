@@ -1,0 +1,15 @@
+{
+  "name": "AngularTask",
+  "version": "1.0.0",
+  "description": "Simple Todo App Using Angular JS 1.0",
+  "main": "index.js",
+  "scripts": {
+    "dev": "live-server"
+  },
+  "author": "Pavel",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "live-server": "^1.2.1"
+  }
+}
