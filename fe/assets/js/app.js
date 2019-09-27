@@ -24,22 +24,6 @@ app.directive('customDoubleClick', function(ScopeHandler) {
       element.on('dblclick', function(event) {
         event.preventDefault();
         scope.$emit('Edit', scope.$index);
-        // console.log(scope.employee.id);
-        // let createControllerScope = ScopeHandler.getScope('createController');
-        // let employeeList = createControllerScope.employees.map(employee=>{
-        //   // console.log(employee);
-        //   if(employee.id === scope.employee.id){
-        //     return {
-        //       ...employee,
-        //       isDisabled : false,
-        //       isEdit : true,
-        //       isUpdate : false
-        //     }
-        //   }
-        //   return employee;
-        // });
-        // createControllerScope.employees = employeeList;
-
       });
     }
   };
