@@ -17,7 +17,8 @@
             </tr>
         </thead>
         <tbody>
-            <tr ng-repeat="(key, employee) in employees | filter : searchData">
+            <!-- <tr ng-repeat="(key, employee) in employees | filter : searchData" custom-double-click> -->
+            <tr ng-repeat="(key, employee) in employees.list track by $index" custom-double-click>
                 <td>
                     <input type="text" class="todoText" ng-model='employee.name' ng-disabled='employee.isDisabled'/>
                 </td>
