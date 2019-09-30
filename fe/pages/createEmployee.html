@@ -7,7 +7,9 @@
         <div class="col-md-12">
             <div class="form-group">
               <label for="exampleInputEmail1">Name</label>
-              <input type="text" class="form-control" placeholder="Enter your Name" ng-model='name' name="employeeName" required>
+              <input type="text" class="form-control" placeholder="Enter your Name"
+              ng-model='name' name="employeeName" ng-change="onChange('name', name)">
+              <span ng-show="invalidName" style="color: red">{{nameErrorMessage}}</span>
             </div>
         </div>
       </div>
@@ -15,13 +17,18 @@
         <div class="col-md-6">
           <div class="form-group">
             <label for="exampleInputPassword1">Email</label>
-            <input type="email" name='email' class="form-control" placeholder="Enter your Email" ng-model='email' required>
+            <input type="text" name='email' class="form-control" placeholder="Enter your Email"
+            ng-model='email' ng-change="onChange('email', email)">
+            <span ng-show="invalidEmail" style="color: red">{{emailErrorMessage}}</span>
           </div>
         </div>
         <div class="col-md-6">
-          <div class="form-group">
-            <label for="exampleInputPassword1">Gender</label>
-            <input type="text" class="form-control" placeholder="Enter your Sex eg. m or f" ng-model='sex' maxlength="1" name="sex" required>
+          <div class="form-group" ng-init="sex='f'">
+            <label for="exampleInputPassword1" style="display: block">Gender</label>
+            <input type="radio" ng-model="sex" value="f" ng-change="onChange('gender', sex)">Female
+            <input type="radio" ng-model="sex" value="m" ng-change="onChange('gender', sex)">Male
+            <input type="radio" ng-model="sex" value="o" ng-change="onChange('gender', sex)">Others
+            <p  ng-show="invalidSex" style="color: red" style="display: block">{{sexErrorMessage}}</p>
           </div>
         </div>
       </div>

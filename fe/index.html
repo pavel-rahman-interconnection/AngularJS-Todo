@@ -4,7 +4,10 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular-route.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.15/lodash.min.js"></script>
+    <script src="node_modules/angular-sweetalert/SweetAlert.min.js"></script>
+    <script src="node_modules/sweetalert/lib/sweet-alert.min.js"></script>
     <script src="assets/js/app.js"></script>
+    <link rel="stylesheet" type="text/css" href="node_modules/sweetalert/lib/sweet-alert.css">
     <link rel="stylesheet" href="assets/css/app.css" />
     <link
       rel="stylesheet"
@@ -29,45 +32,6 @@
     ></script>
 </head>
 <body ng-app="todo">
-    <!-- <script type="text/ng-template" id="custom-form.html">
-        <div ng-controller="createController" class="container">
-                <h1 class="todoList">Employee List</h1>
-            <table class="table todoTable">
-                <thead>
-                    <tr>
-                        <th scope="col">Name</th>
-                        <th scope="col">Email</th>
-                        <th scope="col">Sex</th>
-                        <th scope="col">Edit</th>
-                        <th scope="col">Update</th>
-                        <th scope="col">Delete</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr ng-repeat="(key, employee) in employees">
-                        <td>
-                            <input type="text" class="todoText" ng-model='employee.name' ng-disabled='employee.isDisabled'/>
-                        </td>
-                        <td>
-                            <input type="text" class="todoText" ng-model='employee.email' ng-disabled='employee.isDisabled'/>
-                        </td>
-                        <td>
-                            <input type="text" class="todoText" ng-model='employee.sex' ng-disabled='employee.isDisabled'/>
-                        </td>
-                        <td class="edit">
-                            <button class="btn btn-primary" ng-click='editTodo(key)' ng-disabled="employee.isEdit">edit</button>
-                        </td>
-                        <td class="edit">
-                            <button class="btn btn-primary" ng-click='updateTodo(key, employee)' ng-disabled="employee.isUpdate">update</button>
-                        </td>
-                        <td class="delete" >
-                            <button class="btn btn-danger" ng-click='deleteTodo(key, employee)'>delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </div>
-    </script> -->
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <a class="navbar-brand" href="#">Employee Management</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">

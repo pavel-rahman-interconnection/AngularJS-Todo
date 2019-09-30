@@ -1,4 +1,4 @@
-<div ng-controller="createController" class="container">
+<div ng-controller="listController" class="container">
     <div class="row filter-section">
         <div class="col-md-12">
             <input type="text" class="form-control" placeholder="Search" ng-model='searchData' name="employeeName">
@@ -17,16 +17,20 @@
             </tr>
         </thead>
         <tbody>
-            <!-- <tr ng-repeat="(key, employee) in employees | filter : searchData" custom-double-click> -->
-            <tr ng-repeat="(key, employee) in employees.list track by $index" custom-double-click>
+            <tr ng-repeat="(key, employee) in employees.list | filter : searchData" custom-double-click>
                 <td>
-                    <input type="text" class="todoText" ng-model='employee.name' ng-disabled='employee.isDisabled'/>
+                    <input type="text" class="todoText" ng-model='employee.name' ng-disabled='employee.isDisabled' ng-change="onChange('name', employee.name, key)"/>
+                    <span ng-show="employee.invalidName" style="color: red; text-align: center">{{employee.nameErrorMessage}}</span>
                 </td>
                 <td>
-                    <input type="text" class="todoText" ng-model='employee.email' ng-disabled='employee.isDisabled'/>
+                    <input type="text" class="todoText" ng-model='employee.email' ng-disabled='employee.isDisabled' ng-change="onChange('email', employee.email, key)"/>
+                    <span ng-show="employee.invalidEmail" style="color: red">{{employee.emailErrorMessage}}</span>
                 </td>
                 <td>
-                    <input type="text" class="todoText" ng-model='employee.sex' ng-disabled='employee.isDisabled'/>
+                    <input type="radio" ng-model="employee.sex" value="f" ng-change="onChange('gender', employee.sex, key)" ng-disabled='employee.isDisabled'>Female
+                    <input type="radio" ng-model="employee.sex" value="m" ng-change="onChange('gender', employee.sex, key)" ng-disabled='employee.isDisabled'>Male
+                    <input type="radio" ng-model="employee.sex" value="o" ng-change="onChange('gender', employee.sex, key)" ng-disabled='employee.isDisabled'>Others
+                    <span ng-show="invalidSex" style="color: red">{{sexErrorMessage}}</span>
                 </td>
                 <td class="edit">
                     <button class="btn btn-primary" ng-click='editTodo(key)' ng-disabled="employee.isEdit">edit</button>
